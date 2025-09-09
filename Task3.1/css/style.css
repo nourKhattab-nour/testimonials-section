@@ -1,0 +1,144 @@
+:root {
+  --basecolor: #ffffff;
+  --cardcolor: #424761;
+  --redColor: #e20c0c;
+  --grayColor: #bbbbbb;
+  --shadowColor: rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.title {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 600px;
+}
+
+.title .first-text {
+  color: var(--grayColor);
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.title .second-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 20px;
+  background-color: var(--basecolor);
+}
+
+/* Card */
+.card_container {
+  background-color: var(--cardcolor);
+  width: 320px;
+  padding: 60px 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px var(--shadowColor);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.card_container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Parent image */
+.card_container .image {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--basecolor);
+  background: #fff;
+}
+
+.card_container .parent_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Rating */
+.rating {
+  color: gold;
+  margin: 20px 0;
+  font-size: 1.2rem;
+}
+
+/* Card text */
+.card_text p {
+  color: var(--basecolor);
+  margin: 8px 0;
+}
+
+.card_text .name {
+  font-weight: bold;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+/* Quotation Icon */
+.quotationIcon {
+  position: absolute;
+  bottom: -25px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--basecolor);
+  border: 2px solid var(--redColor);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--redColor);
+  font-size: 1.5rem;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 992px) {
+  .title .second-text {
+    font-size: 2rem;
+  }
+
+  .container {
+    gap: 30px;
+    padding: 40px 15px;
+  }
+
+  .card_container {
+    width: 80%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 576px) {
+  .title .second-text {
+    font-size: 1.8rem;
+  }
+
+  .card_container {
+    width: 100%;
+    padding: 70px 20px 40px;
+  }
+
+  .quotationIcon {
+    right: 10px;
+    bottom: -20px;
+    width: 45px;
+    height: 45px;
+  }
+}
